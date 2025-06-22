@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import tempfile
 
 app = FastAPI()
 
@@ -157,9 +158,17 @@ def certidao_cadastro_nacional(driver, documento):
 
 @app.post("/certidoes")
 def certidoes(request: CertidaoRequest):
+    # Cria diretório temporário exclusivo para cada execução
+    user_data_dir = tempfile.mkdtemp()
+    
     # Inicializa o driver do Selenium
     service = Service()
     options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument(f"--user-data-dir={user_data_dir}")  # Adiciona o diretório de dados do usuário
+
     driver = webdriver.Chrome(service=service, options=options)
     wait = WebDriverWait(driver, 10)
 
