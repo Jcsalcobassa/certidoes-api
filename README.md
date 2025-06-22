@@ -9,7 +9,7 @@ Esta API utiliza o Selenium para realizar scraping em portais oficiais do govern
 ## Estrutura do Repositório
 ├── main.py # FastAPI app com todos os endpoints e lógica de scraping 
 ├── requirements.txt # Dependências (fastapi, selenium, requests, etc) 
-├── render.yanl 
+├── render.yaml 
 ├── README.md 
 # Instruções de uso
 
