@@ -7,7 +7,10 @@ API HTTP para consultar 16 certidões a partir de um CPF ou CNPJ, pronta para in
 Esta API utiliza o Selenium para realizar scraping em portais oficiais do governo brasileiro, permitindo a consulta de diversas certidões, como Certidão de Débitos, Certidão Negativa de Débitos, entre outras. O objetivo é facilitar o acesso a informações importantes de forma automatizada.
 
 ## Estrutura do Repositório
-scraping-certidoes-api/ ├── main.py # FastAPI app com todos os endpoints e lógica de scraping ├── requirements.txt # Dependências (fastapi, selenium, requests, etc) ├── README.md 
+├── main.py # FastAPI app com todos os endpoints e lógica de scraping 
+├── requirements.txt # Dependências (fastapi, selenium, requests, etc) 
+├── render.yanl 
+├── README.md 
 # Instruções de uso
 
 
